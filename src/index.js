@@ -1,11 +1,21 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
+import { createRoot } from 'react-dom/client';
+
+import SingleComment from "./SingleComment";
+
+
 
 const App = () => {
-  return <p className="leadingText">Hello World</p>;
+
+  return <div className="ui comments">
+  <SingleComment />
+  <SingleComment />
+  <SingleComment />
+  </div>;
 }
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<App tab="home" />);
 
 
